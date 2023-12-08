@@ -1,4 +1,5 @@
 const { kafka } = require("./client");
+const group = process.argv[2] || "pathau-rider-group";
 
 async function init() {
   const consumer = kafka.consumer({ groupId: "pathau-rider-group" });
@@ -11,7 +12,9 @@ async function init() {
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message, heartbeat, pause }) => {
-      console.log(`[${topic}]: PART:${partition}: ${message.value.toString()}`);
+      console.log(
+        `${group} [${topic}]: PART:${partition}: ${message.value.toString()}`
+      );
     },
   });
 }
