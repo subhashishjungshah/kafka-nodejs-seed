@@ -22,3 +22,15 @@ To get started with this repository, follow these steps:
    ```bash
    git clone https://github.com/subhashishjungshah/kafka-nodejs-seed.git
    ```
+2. **Start Zookeeper container**: Pull zookeeper image and run inside your local machine:
+   ```bash
+   docker run -p 2181:2181 zookeeper -d
+   ```
+3. **Start Kafka Container**: Use the following commands to run kafka container:
+   ```bash
+      docker run -p 9092:9092 \
+      -e KAFKA_ZOOKEEPER_CONNECT= <PRIVATE_IP>:2181 \
+      -e KAFKA_ADVERTISED_LISTNERS= PLAINTEXT://<PRIVATE_IP>:9092 \
+      -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      confluentinc/cp-kafka
+   ```
