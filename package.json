@@ -1,0 +1,12 @@
+{
+  "name": "kafka-nodejs",
+  "version": "1.0.0",
+  "description": "This repository serves as a learning resource for understanding the integration of Node.js with Apache Kafka. It includes code samples, tutorials, and additional resources to help developers get started with building applications that utilize Kafka messaging.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
